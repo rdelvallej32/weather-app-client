@@ -12,7 +12,7 @@ angular.module('weatherAppApp')
 
     $scope.city = cityService.city;
 
-    $scope.days = $routeParams.days || 1;
+    $scope.days = $routeParams.days || '1';
 
     $scope.$watch('city', function() {
       cityService.city = $scope.city;
