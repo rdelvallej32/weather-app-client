@@ -14,14 +14,7 @@ Days: <a ng-href="#/forecast/1" ng-class="{ 'bg-primary': days === '1' }">Today<
 <div ng-repeat="w in weatherResult.list">
   <div class="row">
     <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{ convertDt(w.dt) | date }}</h3>
-        </div>
-        <div class="panel-body">
-          Daytime Temperature: {{ convertToF(w.temp.day) }}
-        </div>
-      </div>
+      <weather-report weather-day="w" convert-temp="convertToF(degK)" convert-date="convertDt(dt)" date-format="MMM d, y"></weather-report>
     </div>
   </div>
 
