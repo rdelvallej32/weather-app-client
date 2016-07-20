@@ -18,7 +18,7 @@ angular.module('weatherAppApp')
       cityService.city = $scope.city;
     });
 
-    $scope.weatherResult = weatherApi.get({ APPID: '3967400fc266e26b0cb280c55cf69e22', q: $scope.city, cnt: $scope.days });
+    $scope.weatherResult = weatherApi.getWeather($scope.city, $scope.days);
 
     $scope.convertToF = function(degk) {
       return Math.round((1.8 * (degk - 273)) + 32);
