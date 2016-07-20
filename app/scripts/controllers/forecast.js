@@ -8,15 +8,17 @@
  * Controller of the weatherAppApp
  */
 angular.module('weatherAppApp')
-  .controller('ForecastCtrl', ['cityService', 'weatherApi', '$scope', function (cityService, weatherApi, $scope) {
+  .controller('ForecastCtrl', ['cityService', 'weatherApi', '$scope', '$routeParams', function (cityService, weatherApi, $scope, $routeParams) {
 
     $scope.city = cityService.city;
+
+    $scope.days = $routeParams.days || 1;
 
     $scope.$watch('city', function() {
       cityService.city = $scope.city;
     });
 
-    $scope.weatherResult = weatherApi.get({ APPID: '3967400fc266e26b0cb280c55cf69e22', q: $scope.city, cnt: 2});
+    $scope.weatherResult = weatherApi.get({ APPID: '3967400fc266e26b0cb280c55cf69e22', q: $scope.city, cnt: $scope.days });
 
     $scope.convertToF = function(degk) {
       return Math.round((1.8 * (degk - 273)) + 32);
