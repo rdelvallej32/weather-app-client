@@ -1,7 +1,7 @@
 <p>Forecast for {{ city }}</p>
 
 <hr />
-Days: <a ng-href="#/forecast/1">Today</a> | <a ng-href="#/forecast/3">3</a> | <a ng-href="#/forecast/5">5</a> | <a ng-href="#/forecast/7">7</a>
+Days: <a ng-href="#/forecast/1" ng-class="{ 'bg-primary': days === '1' }">Today</a> | <a ng-href="#/forecast/3" ng-class="{ 'bg-primary': days === '3' }">3</a> | <a ng-href="#/forecast/5" ng-class="{ 'bg-primary': days === '5' }">5</a> | <a ng-href="#/forecast/7" ng-class="{ 'bg-primary': days === '7' }">7</a>
 <hr />
 
 
