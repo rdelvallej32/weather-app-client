@@ -8,8 +8,13 @@
  * Factory in the weatherAppApp.
  */
 angular.module('weatherAppApp')
-  .factory('weatherApi', function ($resource) {
+  .service('weatherApi', ['$resource', function ($resource) {
     // Service logic
     // ...
-    return $resource('http://api.openweathermap.org/data/2.5/forecast/daily');
-  });
+    this.getWeather = function(city, days) {
+        let weatherApi = $resource('http://api.openweathermap.org/data/2.5/forecast/daily');
+
+        return weatherApi.get({ APPID: 'Put your api key here!', q: city, cnt: days });
+  };
+
+}]);
