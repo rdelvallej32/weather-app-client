@@ -1,5 +1,10 @@
 <p>Forecast for {{ city }}</p>
 
+<hr />
+Days: <a ng-href="#/forecast/1">Today</a> | <a ng-href="#/forecast/3">3</a> | <a ng-href="#/forecast/5">5</a> | <a ng-href="#/forecast/7">7</a>
+<hr />
+
+
 <div ng-repeat="w in weatherResult.list">
   <div class="row">
     <div class="col-md-12">
