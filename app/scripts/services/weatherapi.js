@@ -8,16 +8,8 @@
  * Factory in the weatherAppApp.
  */
 angular.module('weatherAppApp')
-  .factory('weatherApi', function () {
+  .factory('weatherApi', function ($resource) {
     // Service logic
     // ...
-
-    var meaningOfLife = 42;
-
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
+    return $resource('http://api.openweathermap.org/data/2.5/forecast/daily');
   });
